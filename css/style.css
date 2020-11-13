@@ -1,0 +1,196 @@
+:root {
+    --mainDark: #24292e;
+    --secDark: #444d56;
+    --mainWhite: #fff;
+    --mainGray: rgba(209,213,218,0.5);
+    --mainBlue: #0366d6;
+    --mainOrange: #f9826c;
+    --mainGreen: #2c974b;
+    --secGray: #959da5;
+    --borderGray: #d1d5da;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    font-family: sans-serif;
+    line-height: 1.5;
+    color: #24292e;
+    background-color: #fff;
+    width: 100%;
+}
+.header {
+    background-color: var(--mainDark);
+    color: var(--mainWhite);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+    font-size: 0.85rem;
+}
+.header-item {
+    display: flex;
+    margin-right: 1rem;
+    align-self: stretch;
+}
+.header-link {
+    font-weight: 600;
+    color: var(--mainWhite);
+    white-space: nowrap;
+}
+.octicon {
+    display: inline-block;
+    vertical-align: middle;
+    fill: currentColor;
+}
+.header-search-wrapper {
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--mainDark);
+    border: 1px solid var(--secDark);
+    box-shadow: none;
+    font-weight: 400;
+    color: var(--mainWhite);
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: url("https://github.githubassets.com/images/search-key-slash.svg") no-repeat right 6px center;
+}
+.header-search {
+    margin-right: 0.5rem;
+}
+.header-search-input {
+    display: inline;
+    background: none;
+    border: 0;
+    box-shadow: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding: 5px 12px;
+    color: var(--mainWhite);
+}
+.nav, .notification {
+    display: flex;
+    align-self: auto;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.nav-item {
+    padding-left: 1rem;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--mainWhite);
+    text-transform: capitalize;
+}
+a:hover {
+    color: hsla(0,0%,100%,0.7);
+}
+.avatar-user {
+    border-radius: 50%;
+}
+.avatar {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 1;
+    vertical-align: middle;
+}
+.notification {
+    margin-left: auto;
+}
+.status {
+    position: absolute;
+    top: 1.125rem;
+    right: 7.5rem;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    color: var(--mainWhite);
+    background-image: linear-gradient(#54a3ff,#006eed);
+    background-clip: padding-box;
+    border: 2px solid var(--mainDark);
+    border-radius: 50%;
+}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    content: "";
+    border-top-style: solid;
+    border-top-width: 4px;
+    border-right: 4px solid transparent;
+    border-bottom: 0 solid transparent;
+    border-left: 4px solid transparent;
+}
+main {
+    width: 100%;
+}
+.details {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+.profile {
+    width: 25%;
+    background-color: var(--mainWhite);
+}
+.repo {
+    display: flex;
+    width: 75%;
+}
+.overview {
+    display: flex;
+    width: 100%;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--mainGray)
+}
+.repo-nav {
+    color: var(--mainDark);
+    padding: 1.3rem 1rem;
+    font-size: 14px;
+   
+}
+.repo-nav:hover {
+    color: var(--mainDark);
+    border-bottom: 3px solid var(--borderGray);
+}
+.active {
+    border-bottom: 3px solid var(--mainOrange);
+}
+.counter {
+    display: inline-block;
+    min-width: 20px;
+    margin-left: 4px;
+    color: var(--mainDark);
+    padding: 0 6px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    text-align: center;
+    background-color: var(--mainGray);
+    border: 1px solid transparent;
+    border-radius: 2em;
+}
+.UnderlineNav-octicon {
+    margin-right: 4px;
+    color: var(--secGray);
+}

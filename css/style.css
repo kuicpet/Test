@@ -199,10 +199,14 @@ main {
     outline: none;
     border-color: rgba(27,31,35,0.15);
 }
-.repo {
+.repo-navg {
     display: flex;
+}
+.repo {
+    display: block;
     width: 100%;
     padding: 0 1rem;
+    height: auto;
 }
 .overview {
     display: flex;
@@ -276,7 +280,7 @@ h4 {
     margin-bottom: 0.5rem;
 }
 .find {
-    display: flex;
+    display:flex;
     flex-direction: row;
     align-items: center;
     height: 40px;
@@ -324,6 +328,59 @@ h4 {
 .new:focus {
     background-color: var(--mainGreen);
 }
-.repo-list a {
+.repo-list {
+    display: flex;
+    width: 100%;
+    padding: 24px 0;
+    background-color: var(--mainWhite);
+    border-bottom: var(--border);
+}
+.repo-item-no {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.repo-link {
     color: var(--mainBlue);
+}
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+.repo-heading {
+    display: flex;
+    width: 100%;
+}
+.repo-star {
+    margin-left: 45rem;
+    color: #6a737d;
+    padding: 3px 10px;
+    font-size: 14px;
+    line-height: 20px;
+    background-color: #fafbfc;
+    border: 1px solid rgba(27,31,35,0.15);
+    border-radius: 6px;
+}
+.repo-item-time {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #586069;
+    padding: 1rem 0;
+}
+.lang-color {
+    background-color: var(--mainOrange);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    content: "";
+}
+.mr-1 {
+    padding: 0 0.5rem;
+}
+.octicon-star {
+    margin-right: 4px;
+    fill: currentColor;
 }

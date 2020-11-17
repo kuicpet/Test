@@ -17,7 +17,7 @@ function append(parent, el) {
 // grapql endpoint
 const base_url = `https://cors-anywhere.herokuapp.com/https://api.github.com/graphql`;
 // token
-const accessToken = `2549f0d5989598fe0d85bd8e93384cfc14a676bb`;
+const accessToken = ` e2deb74ee871a645cac1394cf1436832dc2728b8`;
 // query
 const query = `query {
   rateLimit {
@@ -151,7 +151,7 @@ const getData = () => {
  .catch(error => console.log(error));
 }
 
-getData();
+//getData();
 
 // load Data
 const loadData = () => {

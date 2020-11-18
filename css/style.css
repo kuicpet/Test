@@ -94,7 +94,8 @@ a {
     overflow: hidden;
 }
 .search_form input {
-    display: table-cell;
+    display: flex;
+    flex-direction: column;
     line-height: 20px;
     min-width: 200px;
     min-height: 28px;
@@ -129,13 +130,19 @@ a {
     .header {
         padding: 1rem;
     }
-    .wrapper {
-        background-color: var(--mainDark);
+    .header_start {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .search_form input {
+        display: none;
     }
     .nav_toggle {
         display: block;
         position: absolute;
-        right: 1rem;
+        left: 1rem;
         outline: none;
         background-color: transparent;
         border: none;

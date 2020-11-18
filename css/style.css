@@ -15,6 +15,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 html {
     scroll-behavior: smooth;
@@ -32,25 +33,160 @@ body {
     background-color: #fff;
     width: 100%;
 }
-
 .header {
     background-color: var(--mainDark);
     color: var(--mainWhite);
+    position: relative;
+    width: 100%;
+    padding: 0.3rem;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (min-width: 800px) {
+    .wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .nav_wrapper, .notification_wrapper {
+        display: flex;
+    }
+    .nav_item a {
+        text-align: center;
+        border-left: 0;
+
+    }
+}
+.header_start {
     display: flex;
     align-items: center;
-    padding: 1rem;
-    width: 100%;
-    font-size: 0.85rem;
 }
-
+.brand {
+    font-weight: 700;
+    font-size: 20px;
+}
+a {
+    text-decoration: none;
+    color: var(--secGray);
+}
+.search {
+    display: flex;
+    margin-left: 1rem;
+}
+.search_form {
+    display: block;
+}
+.sr-only {
+    position: absolute;
+    clip: rect(1px,1px,1px,1px);
+    padding: 0;
+    border: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.search_form input {
+    display: table-cell;
+    line-height: 20px;
+    min-width: 200px;
+    min-height: 28px;
+    width: 100%;
+    background-color: var(--mainDark);
+    background: url("https://github.githubassets.com/images/search-key-slash.svg") no-repeat right 10px center;
+    border: 0;
+    box-shadow: none;
+    padding: 5px 12px;
+    overflow: visible;
+    border-radius: 6px;
+    outline: none;
+    cursor: text;
+    border: 1px solid var(--secDark);
+    font-weight: 400;
+    color: var(--mainWhite);
+}
+.header_end, .header_notification {
+    display: flex;
+    align-items: center;
+}
+.header_notification {
+    margin-left: auto;
+}
+.nav {
+    display: block;
+}
+.nav_toggle {
+    display: none;
+}
+@media screen and (max-width: 799px) {
+    .header {
+        padding: 1rem;
+    }
+    .wrapper {
+        background-color: var(--mainDark);
+    }
+    .nav_toggle {
+        display: block;
+        position: absolute;
+        right: 1rem;
+        outline: none;
+        background-color: transparent;
+        border: none;
+        color: var(--mainWhite);
+    }
+    .nav_wrapper, .notification_wrapper {
+        position: absolute;
+        top: calc(100%);
+        right: 0;
+        left: 0;
+        z-index: 1;
+        padding-left: 1rem;
+        visibility: hidden;
+        background-color: var(--mainDark);
+        opacity: 0;
+        transform: translateY(-100%);
+        transition:transform .3s ease-out,opacity .3s ease-out;
+    }
+    .nav_wrapper.activeItem {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav_item a {
+        border-top: 1px solid var(--border);
+        border-color: hsla(0,0%,100%,0.15);
+        padding: 0.5rem ;
+    }
+}
+ul {
+    list-style: none;
+}
+.nav_item:not(:last-child){
+    margin-right: 0.5rem;
+}
+.nav_item a {
+    display: block;
+    padding: 1rem 0.3rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.notification_item a {
+    display: block;
+    padding: 0.3rem;
+}
 .header-item {
     display: flex;
     margin-right: 4px;
     align-self: stretch;
 }
-.brand {
-    width: 100%;
-}
+
 .header-link {
     font-weight: 600;
     color: var(--mainWhite);
@@ -170,6 +306,17 @@ main {
     width: 25%;
     background-color: var(--mainWhite);
     margin: 1rem;
+}
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    .profile {
+        display: flex;
+        width: 0%;
+    }
+    .repo-navg {
+        display: flex;
+        width: 100%;
+        padding: 0;
+    }
 }
 .profile-img {
     padding: 0 1rem;

@@ -2,6 +2,22 @@
 let profileImg = document.querySelector(".username");
 let repo = document.querySelector(".repo");
 const ul = document.querySelector(".repo-item");
+let navToggle = document.querySelector(".nav_toggle");
+let navWrapper = document.querySelector(".nav_wrapper");
+
+
+// Nav Button toggler
+navToggle.addEventListener("click", function() {
+  if(navWrapper.classList.contains("activeItem")) {
+    this.setAttribute("aria-expanded", "false");
+    this.setAttribute("aria-label", "menu");
+    navWrapper.classList.remove("activeItem");
+  } else {
+    navWrapper.classList.add("activeItem");
+    this.setAttribute("aria-label", "close menu");
+    this.setAttribute("aria-expanded", "true");
+  }
+});
 
 
 

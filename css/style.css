@@ -26,7 +26,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Roboto',sans-serif;
     font-size: 14px;
     line-height: 1.5;
     color: #24292e;
@@ -228,6 +228,35 @@ a {
         border-radius: 6px;
         font-weight: 400;
     }
+    .edit {
+        padding: 1rem;
+    }
+    .avatars0 {
+        width: 16%;
+        border: 1px solid var(--border);
+    }
+    .username1 {
+        width: 100%;
+        padding-left: 1rem;
+    }
+    .fullname1 {
+        font-size: 26px;
+        line-height: 1.25;
+        font-weight: 600;
+        padding-left: 1rem;
+        padding-top: 0;
+    }
+    .nickname1 {
+        display: block;
+        font-weight: 400;
+        padding-left: 1rem;
+    }
+    .bio{
+        padding: 1rem;
+    }
+    .about, .follow {
+        padding-left: 1rem;
+    }
     
 }
 ul {
@@ -269,6 +298,8 @@ a:hover {
     line-height: 1;
     vertical-align: middle;
     box-shadow: 0 0 0 1px transparent;
+    object-fit: contain;
+    height: auto;
 }
 .caret {
     display: inline-block;
@@ -398,6 +429,9 @@ main {
     color: #586069;
     margin: 5px;
 }
+.follow a:hover {
+    color: var(--mainBlue);
+}
 .follow span {
     font-weight: bold;
 }
@@ -411,8 +445,15 @@ main {
     font-size: 0.8rem;
     text-align: right;
 }
+.about a:hover {
+    text-decoration: underline;
+    color: var(--mainBlue);
+}
 .highlights a {
     text-transform: capitalize;
+}
+.highlights a:hover {
+    color: var(--mainBlue);
 }
 .highlights ul, .about ul {
     padding: 0;
@@ -564,7 +605,8 @@ h3 {
    .repo-navg {
        width: 100%;
        align-items: center;
-       justify-content: center;
+       justify-content: left;
+       padding-left: 1rem;
    }
    .find {
        display: none;

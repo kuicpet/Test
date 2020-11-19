@@ -5,6 +5,8 @@
     --mainGray: rgba(209,213,218,0.5);
     --mainBlue: #0366d6;
     --mainOrange: #f9826c;
+    --mainYellow: #f1e05a;
+    --secBlue: #3572A5;
     --mainGreen: #2ea44f;
     --secGray: #959da5;
     --borderGray: #d1d5da;
@@ -392,7 +394,7 @@ main {
     width: 100%;
     padding-top: 2.5rem;
     padding-bottom: 1.2rem;
-    border-bottom: 1px solid var(--mainGray)
+    border-bottom: 0.3px solid var(--mainGray)
 }
 .repo-nav {
     color: var(--mainDark);
@@ -456,9 +458,6 @@ main {
 }
 .highlights a {
     text-transform: capitalize;
-}
-.highlights a:hover {
-    color: var(--mainBlue);
 }
 .highlights ul, .about ul {
     padding: 0;
@@ -537,29 +536,107 @@ h4 {
     background-color: var(--mainGreen);
 }
 .repo-list {
-    display: flex;
+    display: block;
     width: 100%;
     padding: 24px 0;
     background-color: var(--mainWhite);
     border-bottom: var(--border);
 }
-.repo-item-no {
+.repo-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.repo_item_no {
+    display: flex;
+    width: 100%;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-color: #eaecef;
 }
-.repo-link {
+.col-10 {
+    display: inline-block;
+    width: 83.33333%;
+}
+.d-line {
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.repo_name {
+    word-break: break-all;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.repo_link {
     color: var(--mainBlue);
 }
-.repo-link:hover {
+.repo_link:hover {
     color: var(--mainBlue);
     text-decoration: underline;
 }
-h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
+.repo_description {
+    padding-right: 24px;
+    margin-bottom: 0.5rem;
+    color: var(--textGray);
+    width: 75%;
+    margin-top: 0;
+}
+.repo_details {
+    font-size: 12px;
+    margin-top: 0.5rem;
+    color: var(--textGray);
+}
+.mr-3 {
+    margin-right: 1rem;
+}
+.ml-0 {
+    margin-left: 0;
+}
+.repo_lang_color {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(27,31,35,0.15);
+    border-radius: 50%;
+}
+.repo_star {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 16.66667%;
+}
+.text-right {
+    text-align: right;
+}
+.btn-sm {
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 20px;
+    color: var(--mainDark);
+    background-color: #fafbfc;
+    border: 1px solid rgba(27,31,35,0.15);
+    border-radius: 6px;
+    transition: 0.2s cubic-bezier(0.3,0,0.5,1);
+    transition-property: color,background-color,border-color;
+}
+.btn-sm .octicon {
+    vertical-align: text-top;
+    color: #6a737d;
 }
 .repo-heading {
     display: flex;
@@ -592,7 +669,7 @@ h3 {
 .mr-1 {
     padding: 0 0.5rem;
 }
-.octicon-star , .octicon-norh-star,.octicon-law {
+.octicon-star , .octicon-norh-star,.octicon-law, .octicon-star-fill {
     margin-right: 4px;
     fill: currentColor;
 }
@@ -601,6 +678,15 @@ h3 {
     color: var(--textGray);
     width: 75%;
     font-size: 14px;
+}
+.html {
+    background-color: var(--mainOrange);
+}
+.javascript {
+    background-color: var(--mainYellow);
+}
+.python {
+    background-color: var(--secBlue);
 }
 
 @media screen and (min-width: 360px) and (max-width: 768px) {

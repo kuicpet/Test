@@ -62,7 +62,10 @@ body {
     .nav_item a {
         text-align: center;
         border-left: 0;
-
+    }
+    .profile1 {
+        display: flex;
+        width: 25%;
     }
 }
 .header_start {
@@ -117,6 +120,22 @@ a {
     display: flex;
     align-items: center;
 }
+.hide {
+    display: none;
+}
+.mail {
+    position: absolute;
+    top: 16px;
+    right: 102px;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    color: var(--mainWhite);
+    background-image: linear-gradient(#54a3ff,#006eed);
+    background-clip: padding-box;
+    border: 2px solid var(--mainDark);
+    border-radius: 50%;
+}
 .header_notification {
     margin-left: auto;
 }
@@ -143,10 +162,14 @@ a {
         display: block;
         position: absolute;
         left: 1rem;
+        top: 1.5rem;
         outline: none;
         background-color: transparent;
         border: none;
         color: var(--mainWhite);
+    }
+    .nav_toggle:hover {
+        color: var(--secGray);
     }
     .nav_wrapper, .notification_wrapper {
         position: absolute;
@@ -158,19 +181,54 @@ a {
         visibility: hidden;
         background-color: var(--mainDark);
         opacity: 0;
-        transform: translateY(-100%);
-        transition:transform .3s ease-out,opacity .3s ease-out;
     }
     .nav_wrapper.activeItem {
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
     }
-    .nav_item a {
+    .nav_item a{
         border-top: 1px solid var(--border);
         border-color: hsla(0,0%,100%,0.15);
         padding: 0.5rem ;
     }
+    #x {
+        border: none;
+        padding-top: 0;
+    }
+    .nav_item span {
+        padding-right: 1rem;
+        text-transform: lowercase;
+    }
+    .hide {
+        display: block;
+    }
+    .mail {
+        position: absolute;
+        top: 16px;
+        right: 28px;
+        z-index: 2;
+        width: 14px;
+        height: 14px;
+        color: var(--mainWhite);
+        background-image: linear-gradient(#54a3ff,#006eed);
+        background-clip: padding-box;
+        border: 2px solid var(--mainDark);
+        border-radius: 50%;
+    }
+    .searchhide {
+        width: 100%;
+        background-color: var(--mainDark);
+        outline: none;
+        border: 1px solid var(--border);
+        border-color:  hsla(0,0%,100%,0.15);
+        padding: 0.5rem;
+        color: var(--mainWhite);
+        background: url("https://github.githubassets.com/images/search-key-slash.svg") no-repeat right 10px center;
+        border-radius: 6px;
+        font-weight: 400;
+    }
+    
 }
 ul {
     list-style: none;
@@ -188,68 +246,10 @@ ul {
     display: block;
     padding: 0.3rem;
 }
-.header-item {
-    display: flex;
-    margin-right: 4px;
-    align-self: stretch;
-}
-
-.header-link {
-    font-weight: 600;
-    color: var(--mainWhite);
-    white-space: nowrap;
-}
 .octicon {
     display: inline-block;
     vertical-align: middle;
     fill: currentColor;
-}
-@media screen and (min-width: 360px) and (max-width: 768px) {
-    .nav {
-        width: 100%;
-    }
-}
-
-.header-search-wrapper {
-    align-items: center;
-    width: 100%;
-    max-width: 100%;
-    background-color: var(--mainDark);
-    border: 1px solid var(--secDark);
-    box-shadow: none;
-    font-weight: 400;
-    color: var(--mainWhite);
-    padding: 0.5rem;
-    border-radius: 6px;
-    background: url("https://github.githubassets.com/images/search-key-slash.svg") no-repeat right 6px center;
-}
-.header-search {
-    margin-right: 0.5rem;
-}
-.header-search-input {
-    display: inline;
-    background: none;
-    border: 0;
-    box-shadow: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding: 5px 12px;
-    color: var(--mainWhite);
-}
-.nav, .notification {
-    display: flex;
-    align-self: auto;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    font-weight: 600;
-    white-space: nowrap;
-}
-.nav-item {
-    padding-left: 1rem;
-}
-ul {
-    list-style: none;
 }
 a {
     text-decoration: none;
@@ -270,22 +270,6 @@ a:hover {
     vertical-align: middle;
     box-shadow: 0 0 0 1px transparent;
 }
-.notification {
-    margin-left: auto;
-}
-.status {
-    position: absolute;
-    top: 1.125rem;
-    right: 7.5rem;
-    z-index: 2;
-    width: 14px;
-    height: 14px;
-    color: var(--mainWhite);
-    background-image: linear-gradient(#54a3ff,#006eed);
-    background-clip: padding-box;
-    border: 2px solid var(--mainDark);
-    border-radius: 50%;
-}
 .caret {
     display: inline-block;
     width: 0;
@@ -300,6 +284,8 @@ a:hover {
 }
 main {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .details {
     display: flex;
@@ -314,17 +300,7 @@ main {
     background-color: var(--mainWhite);
     margin: 1rem;
 }
-@media screen and (min-width: 360px) and (max-width: 768px) {
-    .profile {
-        display: flex;
-        width: 0%;
-    }
-    .repo-navg {
-        display: flex;
-        width: 100%;
-        padding: 0;
-    }
-}
+
 .profile-img {
     padding: 0 1rem;
 }
@@ -384,15 +360,15 @@ main {
 }
 .repo-nav {
     color: var(--mainDark);
-    padding: 1.7rem 1rem;
+    padding: 1.3rem 1rem;
     font-size: 14px;
-   
 }
 .repo-nav:hover {
     color: var(--mainDark);
     border-bottom: 3px solid var(--borderGray);
 }
 .active {
+    font-weight: 600;
     border-bottom: 3px solid var(--mainOrange);
 }
 .counter {
@@ -453,6 +429,25 @@ h4 {
     height: 40px;
     width: 100%;
     margin: 0.5rem;
+}
+.form-hide {
+    margin: 1rem 0;
+    width: 100%;
+    padding: 5px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    line-height: 20px;
+    color: var(--mainDark);
+    background-color: var(--mainWhite);
+    outline: none;
+    border: 1px solid var(--border);
+    box-shadow: inset 0 1px 0 rgba(225,228,232,0.2)
+}
+.select-hide {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
 }
 .find-form {
     display: flex;
@@ -560,4 +555,21 @@ h3 {
     color: var(--textGray);
     width: 75%;
     font-size: 14px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    .profile1, .profile {
+        display: none;
+    }
+   .repo-navg {
+       width: 100%;
+       align-items: center;
+       justify-content: center;
+   }
+   .find {
+       display: none;
+   }
+   .new1 {
+       margin-left: auto;
+   }
 }

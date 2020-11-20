@@ -6,7 +6,7 @@ let navToggle = document.querySelector(".nav_toggle");
 let navWrapper = document.querySelector(".nav_wrapper");
 
 document.addEventListener("DOMContentLoaded", function() {
-  getData() || loadData();
+  getData();
   
 })
 
@@ -106,8 +106,6 @@ const getData = () => {
    console.log(result.data);
    const repos = result.data.repositoryOwner.repositories.edges;
    console.log(repos);
- 
-   
    localStorage.setItem("githubData", JSON.stringify(result))
  })
  .catch(error => console.log(error));
@@ -122,9 +120,10 @@ const loadData = () => {
   const user = loadedData.data.repositoryOwner;
   // console.log(user);
   const { name, login, bio, avatarUrl } = user;
-   const image = document.createElement("a");
-   const n = document.createElement("h1");
-   const p = document.createElement("p");
+    let image = createNode("a");
+    let n = createNode("h1");
+    let p = createNode("p");
+   
   
    image.classList.add("profile-img");
    p.classList.add("user-profile-bio");
@@ -138,31 +137,22 @@ const loadData = () => {
    src=${avatarUrl} width="260" height="260" />
    `
    image.innerHTML = imgMarkUp;
-   profileImg.append(image);
+   append(profileImg, image);
 
    const nameMarkUp = `
    <span class="fullname">${name}</span>
    <span class="nickname">${login}</span>`
+
    n.innerHTML = nameMarkUp;
-   profileImg.append(n);
+   append(profileImg, n);
    p.innerHTML = `${bio}`;
-   profileImg.append(p);
+   append(profileImg, p);
    
    // List repos
   arr.flatMap((item) => {
     item.node;
     console.log(item.node)
-    /*
-    let langColor = "";
-    if(item.node.primaryLanguage.name === "HTML"){
-      langColor.classList.add("html") 
-    } else if (item.node.primaryLanguage.name === "javascript"){
-      langColor.classList.add("javascript")
-    } else {
-      langColor.classList.add("python")
-    }*/
-
-
+   
     const liMarkUp =`
     <div class="col-10">
     <div class="d-inline">
@@ -202,5 +192,5 @@ const loadData = () => {
 
 }
   
-
+loadData();
 

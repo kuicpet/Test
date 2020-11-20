@@ -48,6 +48,7 @@ const query = `query {
       login
       avatarUrl
       bio
+      twitterUsername
       following {
         totalCount
       }
@@ -107,8 +108,6 @@ const getData = () => {
  })
  .catch(error => console.log(error));
 }
-
-
 
 // load Data
 const loadData = () => {

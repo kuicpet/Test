@@ -442,6 +442,11 @@ main {
 .follow span {
     font-weight: bold;
 }
+.about .octicon {
+    width: 1rem;
+    color: #6a737d;
+    text-align: center;
+}
 .about, .highlights, .org {
     margin-bottom: 1rem;
 }
@@ -635,6 +640,12 @@ h4 {
     transition: 0.2s cubic-bezier(0.3,0,0.5,1);
     transition-property: color,background-color,border-color;
 }
+.btn-sm:hover {
+    background-color: #f3f4f6;
+    border-color: rgba(27,31,35,0.15);
+    transition-duration: 0.15;
+    text-decoration: none;
+}
 .btn-sm .octicon {
     vertical-align: text-top;
     color: #6a737d;
@@ -680,15 +691,7 @@ h4 {
     width: 75%;
     font-size: 14px;
 }
-.html {
-    background-color: var(--mainOrange);
-}
-.javascript {
-    background-color: var(--mainYellow);
-}
-.python {
-    background-color: var(--secBlue);
-}
+
 
 @media screen and (min-width: 360px) and (max-width: 768px) {
     .profile1, .profile {

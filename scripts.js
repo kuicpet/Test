@@ -33,7 +33,7 @@ function append(parent, el) {
 // grapql endpoint
 const base_url = `https://cors-anywhere.herokuapp.com/https://api.github.com/graphql`;
 // token
-const accessToken = ` e2deb74ee871a645cac1394cf1436832dc2728b8`;
+const accessToken = `b8f31c6903e798931fad035140460df35908b90f`;
 // query
 const query = `query {
   rateLimit {
@@ -66,6 +66,7 @@ const query = `query {
             licenseInfo {
               name
             }
+            stargazerCount
             stargazers {
               totalCount
             }
@@ -101,32 +102,6 @@ const getData = () => {
    const repos = result.data.repositoryOwner.repositories.edges;
    console.log(repos);
  
-   const { name, login, bio, avatarUrl } = result.data.repositoryOwner;
-   const image = document.createElement("a");
-   const n = document.createElement("h1");
-   const p = document.createElement("p");
-  
-   image.classList.add("profile-img");
-   p.classList.add("user-profile-bio");
-  
-   
-  
-   
-   const imgMarkUp = `
-   <img 
-   class="avatar avatar-user width-full"
-   src=${avatarUrl} width="260" height="260" />
-   `
-   image.innerHTML = imgMarkUp;
-   profileImg.append(image);
-
-   const nameMarkUp = `
-   <span class="fullname">${name}</span>
-   <span class="nickname">${login}</span>`
-   n.innerHTML = nameMarkUp;
-   profileImg.append(n);
-   p.innerHTML = `${bio}`;
-   profileImg.append(p);
    
    localStorage.setItem("githubData", JSON.stringify(result))
  })

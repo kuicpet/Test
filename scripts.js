@@ -4,7 +4,11 @@ let repo = document.querySelector(".repo");
 const ul = document.querySelector(".repo-item");
 let navToggle = document.querySelector(".nav_toggle");
 let navWrapper = document.querySelector(".nav_wrapper");
-//let langColor = document.querySelector(".lang-color");
+
+document.addEventListener("DOMContentLoaded", function() {
+  getData() || loadData();
+  
+})
 
 // Nav Button toggler
 navToggle.addEventListener("click", function() {
@@ -198,8 +202,5 @@ const loadData = () => {
 
 }
   
-document.addEventListener("DOMContentLoaded", function() {
-  getData() || loadData();
-  
-})
+
 

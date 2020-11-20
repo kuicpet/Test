@@ -33,7 +33,7 @@ function append(parent, el) {
 // grapql endpoint
 const base_url = `https://cors-anywhere.herokuapp.com/https://api.github.com/graphql`;
 // token
-const accessToken = `b8f31c6903e798931fad035140460df35908b90f`;
+const accessToken = `df35fb5f3cd8acd7c8955eba9c1ba2c770055665`;
 // query
 const query = `query {
   rateLimit {

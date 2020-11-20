@@ -169,13 +169,7 @@ const loadData = () => {
     <div>
         <p class="d-inline repo_description">${item.node.description ? item.node.description : ""}</p>
     </div>
-    <div>
-        <a href="tags">tags</a>
-        <a href="tags">tags</a>
-        <a href="tags">tags</a>
-        <a href="tags">tags</a>
-        <a href="tags">tags</a>
-    </div>
+    
     <div class="repo_details">
         <span class="ml-0 mr-3">
             <span class="repo_lang_color" style="background-color: ${item.node.primaryLanguage.color}"></span>

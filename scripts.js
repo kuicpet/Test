@@ -10,6 +10,7 @@ let stickyNav = document.querySelector(".sticky");
 // get Data on page load
 document.addEventListener("DOMContentLoaded", function() {
   getData();
+  loadData();
 }, false)
 
 // Nav Button toggler

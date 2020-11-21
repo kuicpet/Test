@@ -236,6 +236,7 @@ a {
     .avatars0 {
         width: 16%;
         border: 1px solid var(--border);
+        margin: 0.5rem;
     }
     .username1 {
         width: 100%;
@@ -709,16 +710,33 @@ h4 {
     .profile1, .profile {
         display: none;
     }
-   .repo-navg {
-       width: 100%;
-       align-items: center;
-       justify-content: left;
-       padding-left: 1rem;
-   }
+   
    .find {
        display: none;
    }
    .new1 {
        margin-left: auto;
    }
+}
+@media screen and (max-width: 360px){
+    .repo-navg .octicon {
+        display: none;
+    }
+    .repo-navg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .repo-nav a{
+        text-align: center;
+        padding: 0 4px;
+    }
+    .active {
+        padding: 0 4px;
+    }
+    .counter {
+        display: none;
+    }
 }

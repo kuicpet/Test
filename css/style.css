@@ -739,4 +739,13 @@ h4 {
     .counter {
         display: none;
     }
+    .searchhide {
+        background: none;
+    }
+    .nav_item a {
+        padding: 0.5rem 0;
+    }
+    .nav_wrapper {
+        padding: 1rem;
+    }
 }

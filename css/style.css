@@ -762,7 +762,8 @@ h4 {
         padding: 0 4px;
     }
     .active {
-        padding: 0 4px;
+        padding:1rem;
+        border: none;
     }
     .counter {
         display: none;

@@ -9,7 +9,7 @@ let stickyNav = document.querySelector(".sticky");
 // get Data on page load
 document.addEventListener("DOMContentLoaded", function() {
   getData();
-})
+}, false)
 
 // Nav Button toggler
 navToggle.addEventListener("click", function() {
@@ -49,7 +49,7 @@ function append(parent, el) {
 // grapql endpoint
 const base_url = `https://cors-anywhere.herokuapp.com/https://api.github.com/graphql`;
 // token
-const accessToken = `df35fb5f3cd8acd7c8955eba9c1ba2c770055665`;
+const accessToken = `${process.env.token}`;
 // query
 const query = `query {
   rateLimit {
@@ -115,7 +115,7 @@ const getData = () => {
    return response.json()
  })
  .then(result => {
-   console.log(result.data);
+   console.log(result);
    const repos = result.data.repositoryOwner.repositories.edges;
    console.log(repos);
    localStorage.setItem("githubData", JSON.stringify(result))

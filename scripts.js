@@ -4,10 +4,11 @@ let repo = document.querySelector(".repo");
 const ul = document.querySelector(".repo-item");
 let navToggle = document.querySelector(".nav_toggle");
 let navWrapper = document.querySelector(".nav_wrapper");
+let stickyNav = document.querySelector(".sticky");
 
+// get Data on page load
 document.addEventListener("DOMContentLoaded", function() {
   getData();
-  
 })
 
 // Nav Button toggler
@@ -23,7 +24,18 @@ navToggle.addEventListener("click", function() {
   }
 });
 
+// Stiky Nav
+window.onscroll = function() {getSticky()};
 
+let sticky = stickyNav.offsetTop;
+
+function getSticky() {
+  if (window.pageYOffset >= sticky) {
+    stickyNav.classList.add("sticky_nav")
+  } else {
+    stickyNav.classList.remove("sticky_nav");
+  }
+}
 
 
 function createNode(element) {

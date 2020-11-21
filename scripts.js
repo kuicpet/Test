@@ -38,7 +38,7 @@ function getSticky() {
   }
 }
 
-
+// Create Element
 function createNode(element) {
   return document.createElement(element);
 };
@@ -154,7 +154,10 @@ const loadData = () => {
 
    const nameMarkUp = `
    <span class="fullname">${name}</span>
-   <span class="nickname">${login}</span>`
+   <div>
+    <span class="nickname">${login}</span>
+   </div>
+   `
 
    n.innerHTML = nameMarkUp;
    append(profileImg, n);

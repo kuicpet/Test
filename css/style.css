@@ -380,6 +380,8 @@ main {
 }
 .fullname {
     text-align: center !important;
+    font-size: 26px;
+    line-height: 1.25;
 }
 .nickname {
     font-size: 20px;
@@ -387,6 +389,11 @@ main {
     font-weight: 300;
     line-height: 24px;
     color: #586069;
+    text-transform: lowercase;
+}
+.user-profile-bio {
+    padding: 1rem 0;
+    font-size: 1rem;
 }
 .btn {
     display: block;

@@ -1,3 +1,4 @@
+
 // Dom Selectors
 let profileImg = document.querySelector(".username");
 let repo = document.querySelector(".repo");
@@ -49,7 +50,7 @@ function append(parent, el) {
 // grapql endpoint
 const base_url = `https://cors-anywhere.herokuapp.com/https://api.github.com/graphql`;
 // token
-const accessToken = token;
+const accessToken = `238e1f3a89cf58d4a752fc9a5937a0c834444047`;
 // query
 const query = `query {
   rateLimit {

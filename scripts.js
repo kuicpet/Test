@@ -7,7 +7,10 @@ let navToggle = document.querySelector(".nav_toggle");
 let navWrapper = document.querySelector(".nav_wrapper");
 let stickyNav = document.querySelector(".sticky");
 
-
+// get Data on page load
+document.addEventListener("DOMContentLoaded", function() {
+  getData();
+}, false)
 
 // Nav Button toggler
 navToggle.addEventListener("click", function() {
@@ -202,9 +205,4 @@ const loadData = () => {
 
 }
 
-
-// get Data on page load
-document.addEventListener("DOMContentLoaded", function() {
-  getData();
-  loadData();
-}, false)
+loadData();

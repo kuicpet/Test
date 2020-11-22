@@ -33,7 +33,7 @@ function append(parent, el) {
 // grapql endpoint
 const base_url = `https://cors-anywhere.herokuapp.com/https://api.github.com/graphql`;
 // token
-const accessToken = `f09508a3417fc613d7280217f3f5ed93782b5f23`;
+const accessToken = `f29ffd0cf1eb178b17f70e5e453229297e0187a1`;
 // query
 const query = `query {
   rateLimit {
@@ -107,6 +107,7 @@ const getData = async () => {
     localStorage.setItem("githubData", JSON.stringify(result));
 
     // get User profile
+  /**   
   const user = result.data.repositoryOwner;
   // console.log(user);
   const { name, login, bio, avatarUrl } = user;
@@ -139,7 +140,7 @@ const getData = async () => {
    n.innerHTML = nameMarkUp;
    append(profile, n);
    p.innerHTML = `${bio}`;
-   append(profile, p);
+   append(profile, p);*/
    
     // List repos
   repos.map((item) => {

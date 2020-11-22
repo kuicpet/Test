@@ -376,9 +376,11 @@ main {
     flex-direction: column;
     align-self: auto;
     padding-bottom: 1rem;
+    z-index: 1000;
 }
 .fullname {
-    text-align: center !important;
+    padding-top: 1rem;
+    font-weight: 600;
     font-size: 26px;
     line-height: 1.25;
 }
@@ -738,7 +740,6 @@ h4 {
     width: 75%;
     font-size: 14px;
 }
-
 
 @media screen and (min-width: 360px) and (max-width: 768px) {
     .profile1, .profile {

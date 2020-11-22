@@ -375,7 +375,6 @@ main {
     display: flex;
     flex-direction: column;
     align-self: auto;
-    padding-top: 1rem;
     padding-bottom: 1rem;
 }
 .fullname {

@@ -20,6 +20,19 @@ navToggle.addEventListener("click", function() {
   }
 });
 
+// Stiky Nav
+window.onscroll = function() {getSticky()};
+
+let sticky = stickyNav.offsetTop;
+
+function getSticky() {
+  if (window.pageYOffset >= sticky) {
+    stickyNav.classList.add("sticky_nav")
+  } else {
+    stickyNav.classList.remove("sticky_nav");
+  }
+};
+
 
 // Create Element
 function createNode(element) {
@@ -189,15 +202,3 @@ const getData = async () => {
 getData();
 
 
-// Stiky Nav
-window.onscroll = function() {getSticky()};
-
-let sticky = stickyNav.offsetTop;
-
-function getSticky() {
-  if (window.pageYOffset >= sticky) {
-    stickyNav.classList.add("sticky_nav")
-  } else {
-    stickyNav.classList.remove("sticky_nav");
-  }
-}
